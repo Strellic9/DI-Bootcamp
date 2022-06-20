@@ -1,0 +1,58 @@
+
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 6px;
+  overflow: hidden;
+  background-color: #333;
+}
+
+nav li {
+  float: right;
+}
+
+nav li {
+  font-size: 25px;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li:hover {
+  background-color: #111;
+}
+
+
+main {
+background-image: src="https://user-images.githubusercontent.com/30896388/168069577-2f570d08-61d3-49d8-b7dd-c4b9192aaf68.jpg" alt="odin from avengers pic" width="100%";
+
+}
+
+.container1 {
+  	width:auto;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+
+.centered {
+    font-size: 30px;
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.text-left {
+    width: 40%;
+    font-size: 12px;
+    position: absolute;
+    top: 70%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
+
