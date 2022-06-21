@@ -6,19 +6,37 @@
 }
 
 .boss-box {
+  border: solid black 1px;
+  width: 90vw;
+  height: 90vw;
+  margin: 10px;
   display: grid;
-  grid-gap: 3px;
-
+  grid-gap: 0.625vw;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr) ;
 }
 
 .lil-box {
-  width: 30px;
-  height: 30px;
+  display: flex;
+  width: 5vw;
+  height: 5vw;
   border: solid black 1px;
 }
 
-.b1 { background-color: orange;}
+/*.b1 { background-color: orange;}
 
 .b2 { background-color: lightsalmon;}
 
-.b3 { background-color: brown;}
+.b3 { background-color: brown;}*/
+
+.lil-box:nth-child(3n+1) {
+  background-color: orange;
+}
+
+.lil-box:nth-child(3n+2) {
+  background-color: lightsalmon;
+}
+
+.lil-box:nth-child(3n+3) {
+  background-color: brown;
+}
