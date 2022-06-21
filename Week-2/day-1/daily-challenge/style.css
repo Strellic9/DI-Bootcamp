@@ -55,12 +55,12 @@ background-image: url("thor.jpg");
 }
 
 
-.centered {
+.title {
   color: white;
     font-size: 40px;
     float: right;
-    margin-top: 10vh;
-    margin-right: 10vw;
+    margin-top: 16vh;
+    margin-right: 22vw;
 
 }
 
@@ -74,3 +74,43 @@ background-image: url("thor.jpg");
     
 }
 
+/*small devices 600-768*/
+@media  (max-width: 767px) {
+  .centered {font-size: 35px;}
+  nav {background-color: yellow;  }
+  i {color: black;}
+  li a {color: black;}
+}
+
+/*medium devices 768-992px*/
+@media  (min-width: 768px) {
+   .centered {
+    font-size: 25px;
+  }
+
+  nav {background-color: lightgreen;}
+  i {color: black;}
+  li a {color: black;}
+}
+  
+}
+
+/*large devices 992-1200*/
+@media  (min-width: 992px) {
+   nav {background-color: red;}
+     i {color: white;}
+  li a {color: white;}
+  body {
+background-image: url("1.jpg");
+}
+}
+  
+
+/*XL devices 1200px+*/
+@media  (min-width: 1200px) {
+  nav {background-color: black;}
+       i {color: white;}
+  li a {color: white;}
+  .title  {    margin-top: 56vh;
+    margin-right: 45vw;}
+}
