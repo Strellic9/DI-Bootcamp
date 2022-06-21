@@ -1,18 +1,31 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 
+}
+
+
+nav { /*по сути контейнер*/
+  width: 100vw;
+  height: 60px;
+  background-color: #333;
+}
 
 nav ul {
+  display: inline;
   list-style-type: none;
   margin: 0;
   padding: 6px;
   overflow: hidden;
-  background-color: #333;
 }
 
 nav li {
   float: right;
 }
 
-nav li {
+li a {
+  margin-right: 40px;
   font-size: 25px;
   display: block;
   color: white;
@@ -21,38 +34,81 @@ nav li {
   text-decoration: none;
 }
 
-nav li:hover {
+li a:hover {
   background-color: #111;
 }
 
-
-main {
-background-image: src="https://user-images.githubusercontent.com/30896388/168069577-2f570d08-61d3-49d8-b7dd-c4b9192aaf68.jpg" alt="odin from avengers pic" width="100%";
-
+i {
+  font-size: 40px;
+  color: white;
 }
 
-.container1 {
-  	width:auto;
-    position: relative;
-    text-align: center;
-    color: white;
+.thor-ref {
+  padding: 10px;
+  margin-left: 10px;
+  float: left;
 }
 
 
-.centered {
-    font-size: 30px;
-    position: absolute;
-    top: 40%;
-    left: 30%;
-    transform: translate(-50%, -50%);
+body {
+background-image: url("thor.jpg");
+}
+
+
+.title {
+  color: white;
+    font-size: 40px;
+    float: right;
+    margin-top: 16vh;
+    margin-right: 22vw;
+
 }
 
 .text-left {
+  color: white;
     width: 40%;
-    font-size: 12px;
+    font-size: 24px;
     position: absolute;
-    top: 70%;
-    left: 40%;
-    transform: translate(-50%, -50%);
+    top: 35vh;
+    right: 2vw;
+    
 }
 
+/*small devices 600-768*/
+@media  (max-width: 767px) {
+  .centered {font-size: 35px;}
+  nav {background-color: yellow;  }
+  i {color: black;}
+  li a {color: black;}
+}
+
+/*medium devices 768-992px*/
+@media  (min-width: 768px) {
+   .centered {
+    font-size: 25px;
+  }
+
+  nav {background-color: lightgreen;}
+  i {color: black;}
+  li a {color: black;}
+}
+  
+
+
+/*large devices 992-1200*/
+@media  (min-width: 992px) {
+   nav {background-color: red;}
+     i {color: white;}
+  li a {color: white;}
+  /*body {background-image: url("1.jpg");}*/
+}
+  
+
+/*XL devices >1200px*/
+@media  (min-width: 1200px) {
+  nav {background-color: black;}
+       i {color: white;}
+  li a {color: white;}
+  .title  {    margin-top: 56vh;
+    margin-right: 45vw;}
+}

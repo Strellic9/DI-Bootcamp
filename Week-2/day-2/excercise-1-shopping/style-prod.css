@@ -4,3 +4,28 @@
 	padding: 0;
 }
 
+.big-container {
+	display: block;
+	margin-left: auto;
+	width: 95vw;
+
+
+}
+
+.container {
+	display: inline;
+	padding: 10px;
+	margin-right: 20px;
+	width: 20vw;
+	height: auto;
+}
+
+.c-1 {
+	background-image: url(https://github.com/devtlv/ShoppingProjectSetup_Week1Day2/blob/main/image1.png?raw=true);
+	width: 20vw;
+	height: auto;
+}
+
+.item-name	{
+
+}

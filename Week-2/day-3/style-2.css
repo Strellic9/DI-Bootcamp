@@ -1,0 +1,53 @@
+*, *::after, *::before  {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+
+.outer-div {
+  height: 60vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  border: solid red 5px;
+  justify-content: space-between;
+}
+
+
+.inner-div {
+  font-size: 50px;
+  font-family: arial;
+  color: white;
+  flex-shrink: 1;
+  padding: 10px;
+  border: solid 1px #000;
+  text-align: center;
+  align-items: stretch;
+
+ }
+
+.bg1,.bg2,.bg3 {background-color: lightblue;
+  border: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 5px;
+  height: 19vh;
+}
+
+.bg1 {
+ 
+}
+
+.bg2 {
+  width: 20vw;
+  align-self: ;
+  margin-left: auto;
+}
+
+.bg3 {
+  
+}

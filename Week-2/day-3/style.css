@@ -1,52 +1,50 @@
-body {
-  height: 100vh;
-  width: 100vw;
+*. *::after, *::before  {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  height: auto;
 }
 
-
-
-.parent {
- background-color: #ffff00;
- padding: 30px;
- width: 100vw;
-
-}
-
-.child {
-background-color: #ff00ff;
-padding: 30px;
-}
-
-.box {
-  background-color: #00ffff;
-  padding: 48px;
-  width: 300px;
+.outer-div {
   border: solid black 5px;
-  left: 0%;
-  top: 0%;
-  position: relative;
-}
-
-p {
-  font-size: 25px;
   padding: 10px;
-  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: minmax(200px, 30%) 75%;
+ /* grid-column-gap: 10px;
+  grid-row-gap: 10px;*/
+  grid-gap: 20px;
+/*  position: relative;*/
 }
 
-.box img {
-  float: left;
-  width: 100px;
-  height: 100px;
-  padding: 10px;
+.box-1,.box-2,.box-3,.box-4,.box-5,.box-6 {
+  padding: 20px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: arial;
 }
 
-@media (min-width:1024px) {
-   .parent {background-color: orange;}
-
+.box-1 {
+  background-color: red;
+  /*grid-column: 1/4;*/
 }
 
-@media (max-width: 768px) {
-   .parent {background-color: green;}
+.box-2 {
+  background-color: orange;
+}
+.box-3 {
+  background-color: yellow;
+}
+.box-4 {
+  background-color: blue;
+
+}
+.box-5 {
+  background-color: green;
+
+}
+.box-6 {
+  background-color: purple;
 }
