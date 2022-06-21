@@ -93,20 +93,18 @@ background-image: url("thor.jpg");
   li a {color: black;}
 }
   
-}
+
 
 /*large devices 992-1200*/
 @media  (min-width: 992px) {
    nav {background-color: red;}
      i {color: white;}
   li a {color: white;}
-  body {
-background-image: url("1.jpg");
-}
+  /*body {background-image: url("1.jpg");}*/
 }
   
 
-/*XL devices 1200px+*/
+/*XL devices >1200px*/
 @media  (min-width: 1200px) {
   nav {background-color: black;}
        i {color: white;}
