@@ -1,0 +1,24 @@
+*, *::after, *::before  {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+
+.boss-box {
+  display: grid;
+  grid-gap: 3px;
+
+}
+
+.lil-box {
+  width: 30px;
+  height: 30px;
+  border: solid black 1px;
+}
+
+.b1 { background-color: orange;}
+
+.b2 { background-color: lightsalmon;}
+
+.b3 { background-color: brown;}
