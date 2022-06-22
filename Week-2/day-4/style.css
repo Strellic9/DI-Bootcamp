@@ -1,52 +1,117 @@
-body {
-  height: 100vh;
-  width: 100vw;
+*, *::after, *::before  {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  height: auto;
 }
 
-
-
-.parent {
- background-color: #ffff00;
- padding: 30px;
- width: 100vw;
-
+h1 {
+  color: #353535;
 }
 
-.child {
-background-color: #ff00ff;
-padding: 30px;
-}
-
-.box {
-  background-color: #00ffff;
-  padding: 48px;
-  width: 300px;
-  border: solid black 5px;
-  left: 0%;
-  top: 0%;
-  position: relative;
+h2 {
+  text-align: left;
+  border-bottom: solid grey 3px;
+  color: #353535;
 }
 
 p {
-  font-size: 25px;
+  margin: 5px;
+  color: #353535;
+  font-family: arial;
+}
+
+li {
+  margin: 5px;
+  color: #353535;
+  font-family: arial;
+}
+
+img {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100%;
+  height: 200px;
+  object-fit: cover;
+  border: #353535 solid 0.1px;
+}
+
+i {
+  font-size: 40px;
+  text-decoration: none;
+  color: #353535;
+}
+
+i::visited {
+  text-decoration: none;
+}
+
+.lil-box li {
+  margin-left: 20px;
+}
+
+.text-job-name {
+  margin: 20px;
+}
+
+.text-links {
+  margin: 10px;
+}
+
+.boss-box {
+  margin: 20px;
+/*  border: solid black 1px;*/
+  width: 900px;
+  height: 900px;
+  display: flex;
+  justify-content: center;
+}
+
+.med-box {
+  margin: 10px;
   padding: 10px;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 870px;
+/*  border: solid red 2px;*/
 }
 
-.box img {
-  float: left;
-  width: 100px;
-  height: 100px;
+.mb1 {width: 300px;
+  text-align: center;
+  background-color: #DDDDDD;
+  justify-content: center;
+}
+
+.mb2 {width: 600px;
+
+}
+
+.lil-box {
+  margin: 10px;
   padding: 10px;
+/*  border: solid blue 3px;*/
 }
 
-@media (min-width:1024px) {
-   .parent {background-color: orange;}
+.lb3 li {
+/*  margin-left: 50px;*/
 
 }
 
-@media (max-width: 768px) {
-   .parent {background-color: green;}
+.xs-box {
+  display:  flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
+
+.xxs-box {
+  display: ;
+  border: solid green 2px;
+  width: 250px;
+ /* margin-left: 20px;*/
+  margin-top: 10px;
+}
+
+
+
+

@@ -93,21 +93,21 @@ i::visited {
 /*  border: solid blue 3px;*/
 }
 
-.lb3 {
-/*  display: flex;
-  flex-direction: row;*/
+.lb3 li {
+/*  margin-left: 50px;*/
 
 }
 
 .xs-box {
   display:  flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .xxs-box {
   display: ;
-/*  border: solid green 2px;*/
-  width: 23vw;
+  border: solid green 2px;
+  width: 250px;
  /* margin-left: 20px;*/
   margin-top: 10px;
 }
