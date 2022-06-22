@@ -29,18 +29,15 @@
 
 .b3 { background-color: brown;}*/
 
-.lil-box:nth-child(4n+1) {
-  background-color: #BEBEBE;
+.lil-box:nth-child(3n+1) {
+  background-color: green;
 }
 
-.lil-box:nth-child(4n+2) {
-  background-color: #929292;
+.lil-box:nth-child(3n+2) {
+  background-color: yellow;
 }
 
-.lil-box:nth-child(4n+3) {
-  background-color: #5E5E5E;
+.lil-box:nth-child(3n+3) {
+  background-color: red;
 }
 
-.lil-box:nth-child(4n+4) {
-  background-color: black;
-}
