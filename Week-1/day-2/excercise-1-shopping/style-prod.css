@@ -2,30 +2,175 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	height: auto;
 }
+
+p,span,div,h1 {
+	font-family: arial;
+}
+
+h1 {
+	padding: 10px;
+	margin: 10px;
+	margin-left: 50px;
+}
+
 
 .big-container {
-	display: block;
-	margin-left: auto;
-	width: 95vw;
-
-
-}
+	display: flex;
+	flex-direction: row;
+	margin: 10px;
+	padding: 10px;
+	justify-content: center;
+	border: solid red 1px;
+}	
 
 .container {
-	display: inline;
 	padding: 10px;
-	margin-right: 20px;
-	width: 20vw;
-	height: auto;
+	margin: 10px;
+	display: flex;
+	flex-direction: column;
+	border: solid blue 1px;
 }
 
-.c-1 {
-	background-image: url(https://github.com/devtlv/ShoppingProjectSetup_Week1Day2/blob/main/image1.png?raw=true);
-	width: 20vw;
-	height: auto;
+.item-picture {
+	width: 300px;
+	height: 400px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: block;
+	border: solid green 1px;
 }
+
+.badge {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	text-align: center;
+	padding-top: 15px;
+	color: white;
+	font-weight: bold;
+
+}
+
+.badge-red,.badge-red-2  {
+	background-color: #B81E2D;
+	float: right;
+	position: relative;
+	margin-top: -50px;
+	margin-right: 20px;
+}
+
+.badge-red-2  {
+	margin-top: 20px;
+}
+
+.badge-green {
+	background-color: #3BA5AA;
+	margin-top: 20px;
+	margin-left: 10px;
+}
+
+
+
+.p1 {background-image: url(https://github.com/devtlv/ShoppingProjectSetup_Week1Day2/blob/main/image1.png?raw=true);
+}
+
+.p2 {background-image: url(https://github.com/devtlv/ShoppingProjectSetup_Week1Day2/blob/main/image2.png?raw=true);}
+
+.p3 {background-image: url(https://github.com/devtlv/ShoppingProjectSetup_Week1Day2/blob/main/image3.png?raw=true);}
+
+.p4 {background-image: url(https://github.com/devtlv/ShoppingProjectSetup_Week1Day2/blob/main/image4.png?raw=true;);}
 
 .item-name	{
+	border: solid violet 1px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.price-box {
+	text-align: center;
+}
+
+p,span {
+	text-align: center;
+/*	margin-right: auto;
+	margin-left: auto;*/
+}
+
+p {
+	margin-top: 20px;
+	margin: 10px;
+}
+
+.cart-button {
+	width: 120px;
+	padding: 10px;
+	margin: 10px;
+	background-color: white;
+	border: solid #989898 1px;
+	color:  #989898;
+	font-weight: 750;
+	text-align: center;
+}
+
+.price1 {
+	color: #3BA5AA;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.price2 {
+	color:  #989898;
+	font-size: 14px;
+	text-decoration: line-through;
+}
+
+/*OLD ONES */
+
+nav	{
+	width: 100vw;
+	display: block;
+	background-color: black;
+	padding: 20px;
+	color: white;
+}
+
+I {
+	font-size: 30px;
 
 }
+
+a:visited { 
+	text-decoration: none; 
+	color: white;
+}
+
+.btn {
+	text-decoration: none;
+	position: relative;
+	float: right;
+	margin-right: 20px;
+	padding: 5px;
+	color: white;
+	font-size: 20px;
+}
+
+.btn::hover {
+	background-color: grey;
+
+}
+
+footer {
+	background-color: black;
+	color: white;
+	font-size: 14px;
+	text-decoration: none;
+	text-align: center;
+	padding: 15px;
+}
+
+
+/*OLD END*/

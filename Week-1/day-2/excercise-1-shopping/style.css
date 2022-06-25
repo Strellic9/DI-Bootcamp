@@ -5,6 +5,7 @@
 }
 
 nav	{
+	width: 100vw;
 	display: block;
 	background-color: black;
 	padding: 20px;
@@ -26,8 +27,10 @@ a:visited {
 .btn {
 	text-decoration: none;
 	position: relative;
-	left: 80vw;
-	padding: 20px;
+	float: right;
+	margin-right: 20px;
+/*	left: 80vw;*/
+	padding: 5px;
 	color: white;
 	font-size: 20px;
 }
@@ -36,23 +39,18 @@ a:visited {
 	background-color: grey;
 }
 
-
-
-
-
 .container {
 	background-image: url("shop.jpg");
 	width: 100vw;
-	height: 100vh;
+	height: 84vh;
 }	
 
 h1 {
-	width: 80%;
-	position: absolute;
-	left: 20%;
-	top: 6%;
+	width: 80vw;
+/*	position: absolute;*/
 	font-size: 50px;
 	color: #2B577E;
+	margin-left: 30px;
 
 }
 

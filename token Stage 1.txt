@@ -1,0 +1,3 @@
+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
+
+git remote add origin https://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@github.com/Strellic9/DI-Bootcamp-Stage1.git
