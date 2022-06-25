@@ -22,15 +22,15 @@ h1 {
 	margin: 10px;
 	padding: 10px;
 	justify-content: center;
-	border: solid red 1px;
-}	
+/*	border: solid red 1px;
+*/}	
 
 .container {
 	padding: 10px;
 	margin: 10px;
 	display: flex;
 	flex-direction: column;
-	border: solid blue 1px;
+/*	border: solid blue 1px;*/
 }
 
 .item-picture {
@@ -39,7 +39,15 @@ h1 {
 	background-repeat: no-repeat;
 	background-size: contain;
 	display: block;
-	border: solid green 1px;
+/*	border: solid green 1px;*/
+}
+
+.item-name	{
+/*	border: solid violet 1px;*/
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .badge {
@@ -82,13 +90,7 @@ h1 {
 
 .p4 {background-image: url(https://github.com/devtlv/ShoppingProjectSetup_Week1Day2/blob/main/image4.png?raw=true;);}
 
-.item-name	{
-	border: solid violet 1px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
+
 
 .price-box {
 	text-align: center;
@@ -106,13 +108,13 @@ p {
 }
 
 .cart-button {
-	width: 120px;
+	width: 130px;
 	padding: 10px;
 	margin: 10px;
 	background-color: white;
 	border: solid #989898 1px;
 	color:  #989898;
-	font-weight: 750;
+	font-weight: 800;
 	text-align: center;
 }
 
