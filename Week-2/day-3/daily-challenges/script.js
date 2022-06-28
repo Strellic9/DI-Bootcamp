@@ -135,12 +135,77 @@ console.log(String(building.numberOfRoomsAndRent.dan[1]), 'is Dans new rent. Pre
 
 console.log("__________EXC4 DONE_______________");
 
+// 🌟 Exercise 5 : Family
+// Instructions
+// Create an object called family with a few key value pairs.
+// Using a for in loop, console.log the keys of the object.
+// Using a for in loop, console.log the values of the object.
 
+let family = {
+	dad: 'Pavel',
+	mom: 'Natalia',
+	son: 'Aleksei',
+	daughter: 'Nastya',
+}
 
+for (let i in family) {
+	console.log(i);
+}
+
+for (let i in family) {
+	console.log(family[i]);
+}
 
 
 console.log("__________EXC5 DONE_______________");
 
+// Exercise 6
+// Instructions
+// Given the object above and using a for loop, console.log “my name is Rudolf the raindeer”
 
+let details = {
+  my: 'name',
+  is: 'Rudolf',
+  the: 'raindeer'
+}
+
+let str=['str','str','str'];
+let k=0;
+for (let i in details) {
+	str[k]=i+' '+details[i];
+	k++;
+}
+console.log(str[0],str[1],str[2])
 
 console.log("__________EXC6 DONE_______________");
+
+// Exercise 7 : Secret Group
+// Instructions
+// A group of friends have decided to start a secret society. The society’s name will be the first letter of each of their names sorted in alphabetical order.
+// Hint: a string is an array of letters
+// Console.log the name of their secret society. The output should be “ABJKPS
+
+let names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
+
+
+for (let i=0;i<names.length;i++) {
+	for (let k=i+1;k<(names.length);k++) {
+		if (names[i]<names[k]) continue;
+		else {
+			z1=names[i];
+			z2=names[k];
+			names.splice(i,1,z2);
+			names.splice(k,1,z1);
+		}
+	}
+}
+console.log(names);
+
+let soc=[null];
+for (let i of names) {
+	soc=soc+i.charAt()
+}
+console.log(soc);
+
+
+console.log("__________EXC7 DONE_______________");
