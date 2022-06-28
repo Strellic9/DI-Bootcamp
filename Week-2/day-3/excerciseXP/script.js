@@ -83,15 +83,15 @@ console.log("__________EXC2 DONE + BONUS_______________");
 // While the number is smaller than 10 continue asking the user for a new number.
 // Tip : Which while loop is more relevant for this situation?
 
-// let num=parseInt(prompt('Ok throw me some number'));
-// let check=((typeof (num)=='number') && (num<10));
-// let i=1;
-// while (check==false && i<3) {
-// 	i++;
-// 	num=parseInt(prompt('Throw some other one. Let it be under 10'));
-// 	check=((typeof (num)=='number') && (num<10));
-// }
-// console.log(num);
+let num=parseInt(prompt('Ok throw me some number'));
+let check=((typeof (num)=='number') && (num<10));
+let i=1;
+while (check==false && i<3) {
+	i++;
+	num=parseInt(prompt('Throw some other one. Let it be under 10'));
+	check=((typeof (num)=='number') && (num<10));
+}
+console.log(num);
 
 console.log("__________EXC3 DONE_______________");
 
