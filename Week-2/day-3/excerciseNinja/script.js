@@ -17,28 +17,39 @@ function bmi (height, mass) {
 }
 
 let jack = {
-	FullName: 'Jack the Ripper',
+	FullName: 'Jack `Raiden`',
 	Mass: 120,
 	Height: 178,
-	BMI: bmi(178,120),
+	BMI: function () {
+		x=this.Mass/((this.Height/100)^2)
+		return x;
+	},
 }
+
+console.log(String(jack.BMI()), 'is Jack`s BMI');
 
 let sam = {
 	FullName: 'Samuel Rodrigues',
 	Mass: 90,
 	Height: 184,
-	BMI: bmi(184,90),
+	BMI: function () {
+		x=this.Mass/((this.Height/100)^2)
+		return x;
+	},
 }
 
-console.log(jack.BMI, 'jack`s BMI');
-console.log(sam.BMI, 'sam`s BMI');
+console.log(String(sam.BMI()), 'is Sam`s BMI');
+
+
+// console.log(jack.BMI, 'jack`s BMI');
+// console.log(sam.BMI, 'sam`s BMI');
 
 // Outside of the objects, create a JS function that compares 
 // the BMI of both objects.
 
 // Display the name of the person who has the largest BMI.
 
-let x1=jack.BMI, x2=sam.BMI;
+let x1=jack.BMI(), x2=sam.BMI();
 if (x1>x2) console.log('jack has the largest BMI');
 else console.log ('sam has the largest BMI');
 
@@ -74,4 +85,4 @@ function test(a) {
 test(findAvg(gradesList));
 
 
-console.log('____________EXC2 DONE______________')
+console.log('____________EXC2 DONE WITH BONUS______________')

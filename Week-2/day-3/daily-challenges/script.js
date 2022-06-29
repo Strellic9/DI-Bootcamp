@@ -6,13 +6,13 @@ for (let i=1;i<7;i++) {
 
 console.log('__________part 1 done ______________')
 
-let sum=[null];
+let sum='';
 for (let i=1;i<7;i++) {
 	for (let k=0;k<i;k++){ 
-		sum=sum+str;
+		sum+=str;
 	}
 	console.log(sum);
-	sum=[null];
+	sum='';
 }
 
 console.log('__________part 2 done ______________')

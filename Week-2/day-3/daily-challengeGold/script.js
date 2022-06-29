@@ -15,14 +15,6 @@
 
 const numbers = [5,0,9,1,7,4,2,6,3,8];
 
-let num=numbers.toString();
-console.log(num);
-console.log(typeof num);
-
-let num1=numbers.join('');
-
-console.log(num1);
-console.log(typeof num1);
 
 console.log('_______BONUS_______')
 
@@ -31,9 +23,8 @@ for (let i=0;i<numbers.length;i++) {
 		if (numbers[i]>=numbers[k]) continue;
 		else {
 			z1=numbers[i];
-			z2=numbers[k];
-			numbers.splice(i,1,z2);
-			numbers.splice(k,1,z1);
+			numbers[i]=numbers[k];
+			numbers[k]=z1;
 		}
 	}
 }
