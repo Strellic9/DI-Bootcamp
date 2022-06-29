@@ -1,62 +1,72 @@
-// Exercise 1 : Divisible By Three
+// Exercise 1 : Checking The BMI
 // Instructions
-// Loop through the array above and determine whether or not each number is divisible by three.
-// Each time you loop console.log true or false.
+// Hint:
+// - You must use functions to complete this exercise, to do so take a look at tomorrow’s lesson.
 
-let numbers = [123, 8409, 100053, 333333333, 7]
-for (let i of numbers) {
-	if (i % 3 == 0) console.log('true');
-	else console.log('false');
+// Create two objects, each object should hold a person’s details. Here are the details:
+// FullName
+// Mass
+// Height
+
+// Each object should also have a key which value is a function (ie. A method), that calculates the Body Mass Index (BMI) of each person
+
+
+function bmi (height, mass) {
+	let x=mass/((height/100)^2);
+	return x;
 }
 
-console.log('______EXC1 DONE_______________')
-
-// Exercise 2 : Attendance
-// Instructions
-// Given the object above where the key is the student’s name and the value is the country they are from.
-
-// Prompt the student for their name.
-
-// If the name is in the object, console.log the name of the student and the country they come from.
-// For example: "Hi! I'm [name], and I'm from [country]."
-// Hint: You don’t need to use a for loop, just look up the statement if ... in
-
-// If the name is not in the object, console.log: "Hi! I'm a guest."
-
-let guestList = {
-  randy: "Germany",
-  karla: "France",
-  wendy: "Japan",
-  norman: "England",
-  sam: "Argentina"
+let jack = {
+	FullName: 'Jack the Ripper',
+	Mass: 120,
+	Height: 178,
+	BMI: bmi(178,120),
 }
 
-let name1=prompt('Gib me that name');
-let name=name1.toLowerCase()
-
-if (name in guestList) 
-	console.log('Hello! I`m', name, 'and I`m from', guestList[name]);
-	else console.log('Hi! I`m a guest');
-
-console.log('______EXC2 DONE_______________')
-
-// Exercise 3 : Playing With Numbers
-// Instructions
-// Requirements : Don’t use built-in Javascript methods to answer 
-// the following questions. You have to create the logic by yourself. 
-// Use simple for loops.
-// 1. Console.log the sum of all the numbers in the age array.
-// 2. Console.log the highest age in the array.
-
-let age = [20,5,12,43,98,55];
-let sum=0;
-for (let i of age) sum=sum+i;
-console.log(String(sum), 'is the summary of ages');
-
-let max=0;
-for (let i of age) {
-	if (i>max) max=i;
+let sam = {
+	FullName: 'Samuel Rodrigues',
+	Mass: 90,
+	Height: 184,
+	BMI: bmi(184,90),
 }
-console.log(String(max), 'is the maximum age');
 
-console.log('______EXC3 DONE_______________')
+console.log(jack.BMI, 'jack`s BMI');
+console.log(sam.BMI, 'sam`s BMI');
+
+// Outside of the objects, create a JS function that compares 
+// the BMI of both objects.
+
+// Display the name of the person who has the largest BMI.
+
+let x1=jack.BMI, x2=sam.BMI;
+if (x1>x2) console.log('jack has the largest BMI');
+else console.log ('sam has the largest BMI');
+
+console.log('____________EXC1 DONE______________')
+
+// Exercise 2 : Grade Average
+// Instructions
+// Hint:
+// - This Exercise is trickier then the others. You have to think about its structure before you start coding.
+// - You must use functions to complete this exercise, to do so take a look at tomorrow’s lesson.
+
+// In this exercise we will be creating a function which takes an array of grades as an argument and will console.log the average.
+
+// Create a function called findAvg(gradesList) that takes an argument called gradesList.
+
+let gradesList = [43,87,56,89,98,65,85,51,99];
+
+function findAvg(gradesList) {
+	let sum=0, n=0;
+	for (let i of gradesList) {
+		sum=sum+i;
+		n=n+1;
+	}
+	let a=parseInt(sum/n);
+	if (a>=65) console.log(String(a),', u passed');
+	else console.log(String(a),', no luck for you');
+}
+
+findAvg(gradesList);
+
+console.log('____________EXC2 DONE______________')
