@@ -62,11 +62,16 @@ function findAvg(gradesList) {
 		sum=sum+i;
 		n=n+1;
 	}
-	let a=parseInt(sum/n);
-	if (a>=65) console.log(String(a),', u passed');
-	else console.log(String(a),', no luck for you');
+	let avg=parseInt(sum/n);
+	return avg;
 }
 
-findAvg(gradesList);
+function test(a) {
+	if (a>=65) console.log(String(a),', u passed');
+	else console.log(String(a),', no luck for you, come again');
+}
+
+test(findAvg(gradesList));
+
 
 console.log('____________EXC2 DONE______________')
