@@ -1,32 +1,33 @@
 // Instructions
-// Using the .toString() method convert the array to a string.
-
-// Using the .join()method convert the array to a string. Try passing different values into the join.
-// Eg .join(“+”), .join(” “), .join(“”)
-
-// Bonus : To do this Bonus look up how to work with nested for loops
-// Sort the numbers array in descending order, do so using for loops (Not using built-in sort methods).
-// The output should be: [9,8,7,6,5,4,3,2,1,0]
-// Hint: The algorithm is called “Bubble Sort”
-// Use a temporary variable to swap values in the array.
-// Use 2 “nested” for loops (Nested means one inside the other).
-// Add comments and console.log the result for each step, this will help you understand.
-// Requirement: Don’t copy paste solutions from Google
-
-const numbers = [5,0,9,1,7,4,2,6,3,8];
+// Prompt the user for several words (separated by commas).
+// Put the words into an array.
+// Console.log the words one per line, in a rectangular frame as seen below.
+// Check out the Hints and Requirements below.
+// For example, if the user gives you:
+// Hello, World, in, a, frame
+// you will transform it to : ["Hello", "World", "in", "a", "frame"]
 
 
-console.log('_______BONUS_______')
+// let str=prompt('gib me words, separated by commas and whitespace');
+// INSERT: sus, sus, sus, sus, Amogus
+let str='sus1, sus2, sus3, sus4, Amogus';
+var arr=str.split(', ');
+console.log(arr);
 
-for (let i=0;i<numbers.length;i++) {
-	for (let k=i+1;k<(numbers.length);k++) {
-		if (numbers[i]>=numbers[k]) continue;
-		else {
-			z1=numbers[i];
-			numbers[i]=numbers[k];
-			numbers[k]=z1;
-		}
-	}
+var max=0;
+
+for (let i of arr) {
+	if (i.length>max) max=i.length;
 }
 
-console.log(numbers);
+var star='*';
+var ws=' ';
+
+for (let i=-1; i<arr.length+1; i++) {
+	if (i==-1 || i==(arr.length)) {
+		console.log(star.repeat(max+4));
+	} else {
+		let dl=arr[i].length;
+		console.log(star,arr[i],ws.repeat(max-dl)+star);
+	}
+}

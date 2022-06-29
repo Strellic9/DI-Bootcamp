@@ -247,31 +247,23 @@ var sus=0;
 // console.log(typeof sus, sus)}
 // while (typeof sus!=='number' || (sus<0)) 
 
-function hotelCost() {
-	let num=0;
-	do num=parseInt(prompt('Number of nights pls'));
-		while (isNaN(num)==true || (num<0));
+function hotelCost(num) {
 	let x=(140*num);
 	console.log('hotel',x);
 	return x;
 }
 
-function planeRideCost() {
-	let des=' ';
-	do des=prompt('Destination pls');
-		while (isNaN(parseInt(des))==false || (des==' ') || (des==''));
+function planeRideCost(des) {
 	let x1=0;
-	if (des='London') x1=183;
-	else if (des='Paris') x1=220;
+	if (des=='London') x1=183;
+	else if (des=='Paris') x1=220;
 	else x1=300;
 	console.log('plane',x1);
 	return x1;
 }
 
 function rentalCarCost() {
-	let price=40;
-	do carDays=parseInt(prompt('Number of car days pls'));
-		while (isNaN(carDays)==true || (carDays<0));
+	let price=40;5
 	if (carDays>10) price=(40*0.95);
 	let x2=(price*carDays);
 	console.log('car',x2,'car price',price);
@@ -279,9 +271,18 @@ function rentalCarCost() {
 }
 
 function totalVacationCost() {
-	let c1=hotelCost();
-	let c2=planeRideCost();
-	let c3=rentalCarCost();
+	do num=parseInt(prompt('Number of nights pls'));
+		while (isNaN(num)==true || (num<0));
+	let c1=hotelCost(num);
+	
+	do des=prompt('Destination pls');
+		while (isNaN(parseInt(des))==false || (des==' ') || (des==''));
+	let c2=planeRideCost(des);
+
+	do carDays=parseInt(prompt('Number of car days pls'));
+		while (isNaN(carDays)==true || (carDays<0));
+	let c3=rentalCarCost(carDays);
+
 	let totalcost=(c1+c2+c3);
 	console.log(totalcost);
 	return(totalcost);
