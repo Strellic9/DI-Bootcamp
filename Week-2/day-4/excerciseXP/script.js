@@ -237,3 +237,54 @@ console.log('__________EXC 6 ↓______________')
 
 // Bonus: Instead of using a prompt inside the 3 first functions, only use a prompt inside the totalVacationCost() function. You need to change the 3 first functions, accordingly.
 
+
+var sus=0;
+
+// do sus=prompt('u mad?');
+// while (isString(sus)==true || (sus<0));
+
+// do {sus=prompt('u mad?');
+// console.log(typeof sus, sus)}
+// while (typeof sus!=='number' || (sus<0)) 
+
+function hotelCost() {
+	let num=0;
+	do num=parseInt(prompt('Number of nights pls'));
+		while (isNaN(num)==true || (num<0));
+	let x=(140*num);
+	console.log('hotel',x);
+	return x;
+}
+
+function planeRideCost() {
+	let des=' ';
+	do des=prompt('Destination pls');
+		while (isNaN(parseInt(des))==false || (des==' ') || (des==''));
+	let x1=0;
+	if (des='London') x1=183;
+	else if (des='Paris') x1=220;
+	else x1=300;
+	console.log('plane',x1);
+	return x1;
+}
+
+function rentalCarCost() {
+	let price=40;
+	do carDays=parseInt(prompt('Number of car days pls'));
+		while (isNaN(carDays)==true || (carDays<0));
+	if (carDays>10) price=(40*0.95);
+	let x2=(price*carDays);
+	console.log('car',x2,'car price',price);
+	return x2;
+}
+
+function totalVacationCost() {
+	let c1=hotelCost();
+	let c2=planeRideCost();
+	let c3=rentalCarCost();
+	let totalcost=(c1+c2+c3);
+	console.log(totalcost);
+	return(totalcost);
+}
+
+totalVacationCost()
