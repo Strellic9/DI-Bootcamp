@@ -1,79 +1,58 @@
-// Exercise 1 : Checking The BMI
-// Instructions
-// Hint:
-// - You must use functions to complete this exercise, to do so take a look at tomorrow’s lesson.
-
-// Create two objects, each object should hold a person’s details. Here are the details:
-// FullName
-// Mass
-// Height
-
-// Each object should also have a key which value is a function (ie. A method), that calculates the Body Mass Index (BMI) of each person
 
 
-let jack = {
-	FullName: 'Jack `Raiden`',
-	Mass: 120,
-	Height: 178,
-	BMI: function () {
-		x=this.Mass/((this.Height/100)^2)
-		return x;
-	},
-}
+var word='console';
+var letter='o';
+console.log('initials =',word,word.length,letter)
 
-console.log(String(jack.BMI()), 'is Jack`s BMI');
 
-let sam = {
-	FullName: 'Samuel Rodrigues',
-	Mass: 90,
-	Height: 184,
-	BMI: function () {
-		x=this.Mass/((this.Height/100)^2)
-		return x;
-	},
-}
+let word1=word.slice();
+word1 = word.substring(0,1)+'*'+word.substring(2,word.length);
+console.log(word1);
+word1 = word1.substring(0,4)+'*'+word1.substring(5,word.length);
+console.log(word1);
 
-console.log(String(sam.BMI()), 'is Sam`s BMI');
 
-// Outside of the objects, create a JS function that compares 
-// the BMI of both objects.
-
-// Display the name of the person who has the largest BMI.
-
-let x1=jack.BMI(), x2=sam.BMI();
-if (x1>x2) console.log('Jack has the largest BMI');
-else console.log ('Sam has the largest BMI');
-
-console.log('____________EXC1 DONE______________')
-
-// Exercise 2 : Grade Average
-// Instructions
-// Hint:
-// - This Exercise is trickier then the others. You have to think about its structure before you start coding.
-// - You must use functions to complete this exercise, to do so take a look at tomorrow’s lesson.
-
-// In this exercise we will be creating a function which takes an array of grades as an argument and will console.log the average.
-
-// Create a function called findAvg(gradesList) that takes an argument called gradesList.
-
-let gradesList = [43,87,56,89,98,65,85,51,99];
-
-function findAvg(gradesList) {
-	let sum=0, n=0;
-	for (let i of gradesList) {
-		sum=sum+i;
-		n=n+1;
+function checkLetterInWord (str,letter) {
+	let pos=[null];
+	for (let i=0; i<str.length; i++) {
+		if (str[i]==letter) {
+			pos+=i;
+		}
 	}
-	let avg=parseInt(sum/n);
-	return avg;
+	pos=pos.split('');
+	console.log('positions are',pos);
+	return(pos);
 }
 
-function test(a) {
-	if (a>=65) console.log(String(a),', u passed');
-	else console.log(String(a),', no luck for you, come again');
+function makeStars (str) {
+	let star='*';
+	let stars=star.repeat(str.length);
+	console.log('here are stars', stars);
+	return stars;
 }
 
-test(findAvg(gradesList));
+function replace (str,letter,positions) {
+	// let str1=str.slice();
+	for (let i of positions) {
+		i=parseInt(i);
+		str=str.substring(0,i)+letter+str.substring((i+1),str.length);
+	}
+	console.log('replaced string', str);
+	return (str);
+}
+
+var positions=checkLetterInWord(word,letter);
+var wordStars=makeStars(word);
+var newWord=replace(wordStars,letter,positions);
+
+// CHECKS ↓
+
+// let str1=wordStars.slice();
+// let str2=[null];
+// for (let i of positions) {
+// 	i=parseInt(i);
+// 	str1=str1.substring(0,i)+letter+str1.substring((i+1),str1.length);
+// 	console.log(i, str1);
+// }
 
 
-console.log('____________EXC2 DONE WITH BONUS______________')
