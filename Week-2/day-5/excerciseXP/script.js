@@ -35,5 +35,5 @@ function playTheGame() {
 	}
  }
 
-playTheGame();
+// playTheGame();
  
