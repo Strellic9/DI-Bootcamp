@@ -1,58 +1,97 @@
 
 
-var word='console';
-var letter='o';
-console.log('initials =',word,word.length,letter)
 
+console.log('');
+console.log('');
+console.log('');
+console.log('');
+console.log('');
+// var word='console';
+// var letter='o';
+// console.log('initials =',word,word.length,letter)
 
-let word1=word.slice();
-word1 = word.substring(0,1)+'*'+word.substring(2,word.length);
-console.log(word1);
-word1 = word1.substring(0,4)+'*'+word1.substring(5,word.length);
-console.log(word1);
-
+// TEST
+// let test=''; let k=2; let a=4;
+// test+=(k+', '+a);
+// test=test.split(', ');
+// console.log(test);
 
 function checkLetterInWord (str,letter) {
-	let pos=[null];
+	let pos='';
 	for (let i=0; i<str.length; i++) {
 		if (str[i]==letter) {
-			pos+=i;
+			if (pos=='') {
+				pos+=(i);
+			} else {
+				pos+=(', '+i);
+				// console.log('positn',i,pos);
+			}
 		}
 	}
-	pos=pos.split('');
-	console.log('positions are',pos);
+	if (pos!=='') {
+		pos=pos.split(', ');
+	}
+	// console.log('positions are',pos);
 	return(pos);
 }
 
 function makeStars (str) {
 	let star='*';
 	let stars=star.repeat(str.length);
-	console.log('here are stars', stars);
+	// console.log('here are stars', stars);
 	return stars;
 }
 
 function replace (str,letter,positions) {
-	// let str1=str.slice();
 	for (let i of positions) {
 		i=parseInt(i);
 		str=str.substring(0,i)+letter+str.substring((i+1),str.length);
 	}
-	console.log('replaced string', str);
+	// console.log('replaced string', str);
 	return (str);
 }
 
-var positions=checkLetterInWord(word,letter);
-var wordStars=makeStars(word);
-var newWord=replace(wordStars,letter,positions);
+function playGame () {
+	
+	word=prompt('Player1,  gib word');
+	var newWord=makeStars(word);
+	console.log('Here u go player2, the word u have to guess:', newWord);
+	console.log('');
+	var usedLetters='';
+	var lossCount=0;
+	var k=0;
+	while (newWord!==word && lossCount<9) {
+		letter=prompt('Playes2, give letter');
+		usedLetters+=(letter+' ');
+		var positions=checkLetterInWord(word,letter);
+		if (positions=='') {
+			lossCount++;
+			alert('no match');
+			console.log('So far uve tried:', usedLetters);
+			console.log('Remaining chances to fail:', parseInt(10-lossCount));
+			console.log(' ');
+		} else {
+			alert('match. Word updated');
+			newWord=replace(newWord,letter,positions);
+			console.log('Updated word:',newWord);
+			console.log('So far u`ve tried:', usedLetters);
+			console.log(' ');
+		}
+	}
+	if (newWord==word) {
+		alert('u win');
+		console.log('u win');
+		return;
+	}
+	else if (lossCount>9) {
+		alert('u lost');
+		console.log('u lost');
+		return;
+	}
+}
 
-// CHECKS ↓
 
-// let str1=wordStars.slice();
-// let str2=[null];
-// for (let i of positions) {
-// 	i=parseInt(i);
-// 	str1=str1.substring(0,i)+letter+str1.substring((i+1),str1.length);
-// 	console.log(i, str1);
-// }
+
+
 
 
