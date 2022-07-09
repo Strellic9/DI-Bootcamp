@@ -1,5 +1,8 @@
+var ngCount = 0;
+
 var dealerSum = 0;
 var playerSum = 0;
+var playerMoney = 1000;
 
 var dealerAceCount = 0;
 var playerAceCount = 0;
@@ -8,28 +11,74 @@ var hidden;
 var deck=[];
 
 var canHit = true;
+var canStay = true;
+var canNext = false;
 
-// window.onload = function () {
-// }
+var playerBalance = document.getElementById('player-balance');
+let betInput = document.getElementById('bet');
+
 
 document.getElementById('newgame').addEventListener('click', newGame);
 document.getElementById('next').addEventListener('click', nextButton);
 
 
 function newGame () {
-    // document. location. reload();
-    document.getElementById('player-cards').innerHTML='';
-    document.getElementById('dealer-cards').innerHTML='';
-    document.getElementById('dealer-sum').innerText = '';
-    document.getElementById('player-sum').innerText = '';
-    document.getElementById('results').innerText = '';
+    if (ngCount==0) {
+        newGameInner ();
+        ngCount++
+        return;
+    }
+    let ng = confirm('Are you sure? Your bank will be 1000 again.')
+    if (ng) {
+        newGameInner ()
+        ngCount++
+    } else return;
+}
+
+function newGameInner () {
+    nullValues();
+    nullFields();
     buildDeck();
     shuffleDeck();
     startGame();
+    playerMoney=1000;
+    playerBalance.innerText = playerMoney;
 }
 
 function nextButton () {
+    if (!canNext) {
+        return;
+    } else if (playerMoney==0) {
+        alert('Your bank is zero. Out of the game!')
+    } else if (playerMoney>5000) {
+        alert('Casino throws you out for making too much! Consider that a win.')
+    } else {
+        nullValues();
+        nullFields();
+        buildDeck();
+        shuffleDeck();
+        startGame();
+    }   
+}
 
+function nullValues () {
+    dealerSum = 0;
+    playerSum = 0;
+    dealerAceCount = 0;
+    playerAceCount = 0;
+    hidden='';
+    deck=[];
+    canHit = true;
+    canStay = true;
+    canNext = false;
+}
+
+function nullFields () {
+    document.getElementById('player-cards').innerHTML='';
+    document.getElementById('dealer-cards').innerHTML='';
+    document.getElementById('dealer-sum').innerHTML = '';
+    document.getElementById('player-sum').innerHTML = '';
+    document.getElementById('results').innerHTML = '';
 }
 
 function buildDeck() {
@@ -55,17 +104,18 @@ function shuffleDeck() {
 }
 
 function startGame() {
-    
+    playerBalance.innerText = playerMoney;
+
     let hiddenImg = document.createElement('img');
     hiddenImg.src = "./cards/BACK.png";
+    hiddenImg.id = 'hidden';
     document.getElementById('dealer-cards').append(hiddenImg)
     hidden = deck.pop();
     dealerSum += getValue(hidden);
     dealerAceCount += checkAce(hidden);
+    // FIRST CARD FOR DEALER, HIDDEN
 
-    while(dealerSum < 17) getCardDealer();
-    console.log(hidden);
-    console.log(dealerSum);
+    getCardDealer(); // SECOND CARD FOR DEALER
 
     for (let i=0; i<2; i++) getCardPlayer();
     document.getElementById('hit').addEventListener('click', hit);
@@ -107,6 +157,23 @@ function hit () {
 }
 
 function stay () {
+    canNext = true;
+    if (!canStay) {
+        return;
+    } else if (dealerSum < 17) {
+        setTimeout(getCardDealer(), 5000);
+    }
+
+    let bet = 0;
+    let betV = parseInt(betInput.value);
+    console.log('betV is',betV);
+
+    if (betV>playerMoney) {
+        alert('Bet size is more than your balance. Max possible bet taken')
+        bet=playerMoney;
+    } else bet=betV;
+    console.log('bet is', bet);
+
     dealerSum = reduceAce (dealerSum, dealerAceCount);
     playerSum = reduceAce (playerSum, playerAceCount);
 
@@ -114,21 +181,27 @@ function stay () {
     document.getElementById('hidden').src = './cards/'+hidden+'.png';
 
     let message = '';
+    
     if (playerSum > 21) {
-        message = "you lose"
+        message = "Dealer wins";
+        playerMoney -= bet;
     } else if (dealerSum > 21) {
-        message= 'you win'; 
+        message= 'You win'; 
+        playerMoney += bet;
     } else if (playerSum == dealerSum) {
-        message = 'tie'
+        message = 'Tie'
     } else if (playerSum < dealerSum) {
-        message = 'you lose'
+        message = 'Dealer wins'
+        playerMoney -= bet;
     } else if (playerSum > dealerSum) {
-        message = 'you win'
+        message = 'You win'
+        playerMoney += bet;
     }
 
     document.getElementById('dealer-sum').innerText = dealerSum;
     document.getElementById('player-sum').innerText = playerSum;
     document.getElementById('results').innerText = message;
+    playerBalance.innerText = playerMoney;
 }
 
 function reduceAce (playerSum, playerAceCount) {
@@ -160,3 +233,4 @@ function checkAce (card) {
     }
     return 0;
 }
+
