@@ -2,37 +2,57 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: arial;
-    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
     color: white;
 }
 
 body {
     text-align: center;
     background-image: url(table.jpg);
+    z-index: 1;
 }
 
 h1,h2 {
     margin: 10px;
 }
 
+#conditions {
+    font-size: 16px;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
 .container {
     /* width: 50vw; */
     height: 22vh;
+    width: 70vw;
+    border-radius: 20px;
     margin-left: auto;
     margin-right: auto;
+    background-color: rgb(144, 144, 144, 0.7);
+    z-index: 2;
+    /* padding-top: 15px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 img {
+    opacity: 1;
     height: 180px;
     width: auto;
     margin: 5px;
+    position: relative;
+    z-index: 9999;
 }
 
 button {
     background-color: #303030;
-    border: solid black 2px;
-    border-radius: 10px;
+    border: solid grey 1px;
+    border-radius: 7px;
     padding: 10px;
     margin: 15px;
     width: auto;
@@ -55,7 +75,7 @@ button {
     background-color: #303030;
     border: solid black 2px;
     border-radius: 5px;
-    padding: 2px;
+    padding: 3px;
     padding-left: 15px;
     padding-right: 15px;
     margin: 5px;
@@ -70,26 +90,29 @@ button {
 }
 
 #results {
-    margin-top: 10px;
-    font-size: 40px;
+    margin-top: 20px;
+    font-size: 60px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     img {
         height: 150px;
     }
 
-    button {
-
+    .container {
+        width: 80vw;
     }
-
+/* 
     * {
         font-size: 30px;
-    }
+    } */
 }
 
 @media (max-width: 786px) {
     img {
         height: 120px;
+    }
+    .container {
+        width: 90vw;
     }
 }

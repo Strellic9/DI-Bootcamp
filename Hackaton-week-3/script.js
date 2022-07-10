@@ -160,8 +160,9 @@ function stay () {
     canNext = true;
     if (!canStay) {
         return;
-    } else if (dealerSum < 17) {
-        setTimeout(getCardDealer(), 5000);
+    } 
+    while (dealerSum < 17) {
+       getCardDealer();
     }
 
     let bet = 0;
@@ -183,18 +184,18 @@ function stay () {
     let message = '';
     
     if (playerSum > 21) {
-        message = "Dealer wins";
+        message = "Dealer wins!";
         playerMoney -= bet;
     } else if (dealerSum > 21) {
-        message= 'You win'; 
+        message= 'You win!'; 
         playerMoney += bet;
     } else if (playerSum == dealerSum) {
         message = 'Tie'
     } else if (playerSum < dealerSum) {
-        message = 'Dealer wins'
+        message = 'Dealer wins!'
         playerMoney -= bet;
     } else if (playerSum > dealerSum) {
-        message = 'You win'
+        message = 'You win!'
         playerMoney += bet;
     }
 
@@ -202,6 +203,8 @@ function stay () {
     document.getElementById('player-sum').innerText = playerSum;
     document.getElementById('results').innerText = message;
     playerBalance.innerText = playerMoney;
+
+    canStay = false;
 }
 
 function reduceAce (playerSum, playerAceCount) {

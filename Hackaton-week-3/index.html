@@ -3,14 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Roboto:wght@100&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>BlackJack</title>
    
   </head>
   <body>
 
-    <h1>BLACKJACK BABY</h1>
+    <h1>BLACKJACK TABLE</h1>
+    <p id="conditions">You lose when bank is lost, you win if the bank is 5k+. Have a good one! </p>
     <button class="button" id="newgame"> New Game </button>
     <br>
 
@@ -30,7 +36,7 @@
     <button class="button" id="next"> Next </button>
 
 
-    <p id="balance">Balance: <span id="player-balance"></span> </p>
+    <p id="balance">Bank: <span id="player-balance"></span> </p>
     <!-- <form action="">
         <label for="" id="bet-label"> Your bet: </label>
         <input type="number" id="bet" value='5'>
