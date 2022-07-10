@@ -49,9 +49,9 @@ function nextButton () {
     if (!canNext) {
         return;
     } else if (playerMoney==0) {
-        alert('Your bank is zero. Out of the game!')
+        alert('Your bank is zero. Out of the game! You can go to the nearest ATM, get some new cash and start a New Game.')
     } else if (playerMoney>5000) {
-        alert('Casino throws you out for making too much! Consider that a win.')
+        alert('Casino throws you out for making too much. Consider that a win!')
     } else {
         nullValues();
         nullFields();
