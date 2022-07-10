@@ -55,8 +55,8 @@ function nextButton () {
     } else {
         nullValues();
         nullFields();
-        buildDeck();
-        shuffleDeck();
+        // buildDeck();
+        // shuffleDeck();
         startGame();
     }   
 }
@@ -67,7 +67,7 @@ function nullValues () {
     dealerAceCount = 0;
     playerAceCount = 0;
     hidden='';
-    deck=[];
+    // deck=[];
     canHit = true;
     canStay = true;
     canNext = false;
@@ -82,15 +82,18 @@ function nullFields () {
 }
 
 function buildDeck() {
+    deck =[];
     let values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
     let types = ['C', 'D', 'H', 'S']
 
-    for (let i=0; i < types.length; i++) {
-        for (let j=0; j < values.length; j++) {
-        deck.push(values[j]+'-'+types[i]);
+    for (let s=0; s<6; s++) {
+        for (let i=0; i < types.length; i++) {
+            for (let j=0; j < values.length; j++) {
+            deck.push(values[j]+'-'+types[i]);
+            }
         }
     }
-
+    // console.log(deck);
 }
 
 function shuffleDeck() {
@@ -100,10 +103,15 @@ function shuffleDeck() {
         deck[i]=deck[j];
         deck[j]=temp;
     }
-    console.log(deck);
+    // console.log(deck);
 }
 
 function startGame() {
+    if (deck.length<20) {
+        buildDeck();
+        shuffleDeck();
+    }
+
     playerBalance.innerText = playerMoney;
 
     let hiddenImg = document.createElement('img');
@@ -121,6 +129,7 @@ function startGame() {
     document.getElementById('hit').addEventListener('click', hit);
     document.getElementById('stay').addEventListener('click', stay);
 
+    console.log('deck remains:', deck)
 }
 
 
