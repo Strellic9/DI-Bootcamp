@@ -1,49 +1,31 @@
+let bigDiv = document.createElement('div')
+bigDiv.classList.add = 'container';
+// bigDiv.style.backgroundColor = 'black';
+// bigDiv.style.height = '600px'
+bigDiv.style.width = '160px'
 
-// ACTIVATES ON BUTTON ON HTML PAGE
+bigDiv.style.display = 'grid';
+bigDiv.style.gridTemplateColumns = 'repeat(7, 1fr)'
+bigDiv.style.gridTemplateRows = 'repeat(7, 1fr)'
+bigDiv.style.rowGap = '1px'
 
-function bottlesLyrics () {
-	let bottlesNumber=parseInt(prompt('Throw me a number of bottles'));
-	for (let i=0; i<3; i++) {
-		// console.log(bottlesNumber);
-		if (isNaN(bottlesNumber)==true || (bottlesNumber<2)) {
-			bottlesNumber=parseInt(prompt('Again. Only number, above 1'));
-		} else break;
+for (let i=0; i<49; i++) {
+	let div = document.createElement('div');
+	div.style.height = '30px';
+	div.style.width = '20px';
+	div.style.backgroundColor = 'black';
+	div.id = i;
+	let starBox = [2,3,4,8,12,15,19,22,23,24,25,26,29,33,36,40,43,47];
+	if (starBox.includes(i)) {
+		div.innerText='*';
 	}
-	if (isNaN(bottlesNumber)==true || (bottlesNumber<2)) {
-		alert('u stoopid');
-		return;
-	}
-	
-	// ↑ SUDA PROMPT S PROVERKOY
-	console.log('we start a song with',bottlesNumber,'bottles');
-	console.log('');
-
-	let bottlesCount=1;
-	console.log(' -> Take _'+bottlesCount+'_ down, pass it around');
-	bottlesNumber-=bottlesCount;
-	bottlesCount++;
-	console.log(' -> we have now '+bottlesNumber+' bottles');
-	console.log('');
-
-	while (bottlesNumber>bottlesCount) {
-		console.log(' -> Take _'+bottlesCount+'_ down, pass them around');
-		bottlesNumber-=bottlesCount;
-		bottlesCount++;
-		console.log(' -> we have now '+bottlesNumber+' bottles');
-		console.log('');
-	}
-
-	// console.log(bottlesNumber,bottlesCount)
-
-	if (bottlesNumber==1) {
-		console.log(' -> Take _'+bottlesNumber+'_ down, pass it around');
-		console.log(' -> no bottle of beer on the wall');
-		console.log('');
-	} else {
-		console.log(' -> Take _'+bottlesNumber+'_ down, pass it around');
-		console.log(' -> no bottle of beer on the wall');
-		console.log('');
-	}
-
+	bigDiv.appendChild(div)
 }
+
+document.body.appendChild(bigDiv);
+
+document.body.style.color = 'red'
+document.body.style.fontSize = '20px'
+document.body.style.textAlign = 'center'
+
 

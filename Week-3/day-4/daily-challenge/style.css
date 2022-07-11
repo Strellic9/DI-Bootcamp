@@ -28,6 +28,20 @@ body {
     padding: 20px;
 }
 
+i {
+    color: rgb(214, 64, 64) !important;
+    font-size: 30px;
+}
+
+.button-delete {
+   background-color: white;
+   border: none;
+}
+
+.button-delete:hover {
+    cursor: pointer
+}
+
 h1 {
     text-align: center;
     margin-top: 30px;

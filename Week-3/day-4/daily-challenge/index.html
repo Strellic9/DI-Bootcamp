@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/b3fffad12b.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Todo list</title>
@@ -14,24 +15,26 @@
     <div id="big-container">
       
      
-      <form action="" submit="addTask()">
-        <input type="text" placeholder="new task" id="input">
-        <input type="submit" value="ADD">
-      </form>
+      <input type="text" id="myInput" placeholder="Title...">
+      <span onclick="newElement()" class="addBtn">Add</span>
 
       <div id="listTasks">
         <ul id="list">
-          <li>eh1</li>
+          <li> <button class="button-delete" onclick="deleteTask()"> <i class="fa-solid fa-square-xmark"></i> </button> eh1</li>
           <li>eh2</li>
           <li>eh3</li>
         </ul>
+
         
       </div>
 
       <button id="button-clear">Clear</button>
 
-    </div>
       
+
+    </div>
+    
+    <script src="https://kit.fontawesome.com/b3fffad12b.js" crossorigin="anonymous"></script>
     <script src="script.js" charset="utf-8"></script>
   </body>
 </html>
