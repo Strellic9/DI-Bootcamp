@@ -13,6 +13,8 @@ let root = document.getElementsByClassName('listPlanets')[0];
 
 for (let i=0; i < solarSystem.length; i++) {
 	let planet=document.createElement('div');
+	planet.classList.add('planet');
+	
 	planet.innerText= solarSystem[i].name;
 	planet.style.color= '#fff';
 	planet.style.backgroundColor=solarSystem[i].color;
