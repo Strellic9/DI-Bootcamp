@@ -1,38 +1,48 @@
-print('EXC1 \n')
+print('___________EXC1____________')
 
-# length = input ('gib lengt \n')
-# number = int (input ('gib number \n'))
+# word = input('giv word')
+# letters = dict()
 
-# userSequence = list()
+# for i in range(len(word)):
+#     if word[i] not in letters:
+#         letters[str(word[i])] = [i]
+#         print(word[i])
+#         print(letters)
+#     else:
+#         letters[str(word[i])].append(i)
+#         print(word[i])
 
-# for i in range(number):
-#     userSequence.append(number*(i+1))
 
-# print(userSequence)
+# print(letters)
 
-print('EXC2 \n')
 
-word = input('giv word with repeated cosecutive letters \n')
-for i in range(1,len(word)): #слово длина 7, И от 1 до 7
+print('___________EXC2____________')
 
-    if i>=len(word):
-            break
-    while word[i-1] == word[i]:
-        word = word[:i-1] + word[i:]
-        if i==len(word):
-            break
+items_purchase = {
+  "Apple": "$4",
+  "Honey": "$3",
+  "Fan": "$14",
+  "Bananas": "$4",
+  "Pan": "$100",
+  "Spoon": "$2"
+}
 
-print(word)
+wallet = '$1'
 
-# word = input('giv word with repeated cosecutive letters \n')
-# for i in range(0,len(word)): #0:7
-#     if i==len(word)-1:  # когда -1 - это уже конец строки; -2 - предпосл; если континью суда не приводит - не надо
-#         break 
-#     print(word[i])
-#     if i==len(word)-2:
-#         if word[i] == word[i+1]:
-#              word = word[:i]
-#         else:
-#             while word[i] == word[i+1]:
-#                 word = word[:i] + word[i+1:]
-#                 # continue
+wallet = int(wallet[1:len(wallet)])
+print(wallet)
+
+items_purchase1 = {x: int(y[1:len(y)]) for x,y in items_purchase.items()}
+print(items_purchase1)
+
+affordableItems = list()
+
+for key,value in items_purchase1.items():
+    # print(key,value)
+    if value<=wallet:
+        affordableItems.append(key)
+
+if affordableItems==[]:
+    print('Nothing')
+else:
+    print(affordableItems)
