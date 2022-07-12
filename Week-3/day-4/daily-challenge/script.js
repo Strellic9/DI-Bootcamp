@@ -3,16 +3,28 @@ let listTasks = [];
 var input = document.getElementById('input');
 var div = document.getElementById('listTasks')
 
-// Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
+var myNodelist = document.getElementsByTagName("li");
+
+
+function createHideButton () {
+	for (i = 0; i < myNodelist.length; i++) {
+	var span = document.createElement("span");
+	var xBox = document.createElement("i");
+	xBox.classList = 'fa-solid fa-square-xmark'
+	span.appendChild(xBox)
+	span.className = "close";
+	var textBox = document.createElement("span");
+
+	var myNodeInside = myNodelist[i].innerText
+	textBox.innerText = myNodeInside
+	span.appendChild(textBox);
+
+	myNodelist[i].innerText = ''
+	myNodelist[i].appendChild(span);
+	}
 }
+
+createHideButton ()
 
 function newElement() {
 	var li = document.createElement("li");
@@ -26,11 +38,7 @@ function newElement() {
 	}
 	document.getElementById("myInput").value = "";
   
-	var span = document.createElement("SPAN");
-	var txt = document.createTextNode("\u00D7");
-	span.className = "close";
-	span.appendChild(txt);
-	li.appendChild(span);
+	createHideButton ()
   
 	for (i = 0; i < close.length; i++) {
 	  close[i].onclick = function() {
@@ -42,7 +50,6 @@ function newElement() {
 
 // Click on a close button to hide the current list item
 var close = document.getElementsByClassName("close");
-var i;
 for (i = 0; i < close.length; i++) {
   close[i].onclick = function() {
     var div = this.parentElement;
@@ -50,7 +57,10 @@ for (i = 0; i < close.length; i++) {
   }
 }
 
-function deleteTask () {
-	var ul = this.parentElement;
-	ul.style.display = 'none';
+function clearAll() {
+	var lis = document.getElementsByTagName('li')
+	for (i in lis) {
+		lis[i].style.display = 'none';
+	}
 }
+

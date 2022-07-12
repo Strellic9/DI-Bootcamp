@@ -1,16 +1,16 @@
 print('___________EXC1____________')
 
-# word = input('giv word')
-# letters = dict()
+word = input('giv word')
+letters = dict()
 
-# for i in range(len(word)):
-#     if word[i] not in letters:
-#         letters[str(word[i])] = [i]
-#         print(word[i])
-#         print(letters)
-#     else:
-#         letters[str(word[i])].append(i)
-#         print(word[i])
+for i in range(len(word)):
+    if word[i] not in letters:
+        letters[str(word[i])] = [i]
+        print(word[i])
+        print(letters)
+    else:
+        letters[str(word[i])].append(i)
+        print(word[i])
 
 
 # print(letters)
