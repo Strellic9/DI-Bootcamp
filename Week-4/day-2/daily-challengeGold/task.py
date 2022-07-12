@@ -2,12 +2,17 @@ space = ' '
 palka = '_'
 candle = 'i'
 cakeCount = 1
-x = 9 
-# СЮДА ВСТАВИТЬ ЗАБОР ИКСА У ЮЗЕРА
+
+# ____________ PART 1  calculating age
+
+
 userX = input('gib ur birth date, DD-MM-YYYY \n')
 date = '11-07-2022'
 userX = userX.split('-')
 dateX = date.split('-')
+
+# [03,03,1998]
+# 11-07-2022
 
 for i in range(0,3):
     userX[i]=int(userX[i])
@@ -32,6 +37,9 @@ if userX[2] % 4 == 0:
     
 print('age', age)
 
+
+# ____________ PART 2  DOING CAKES
+
 x = age % 10
 # print(x)
 
@@ -42,10 +50,10 @@ print (x,y,z)
 for i in range(cakeCount):
     print(space*7+palka*y+candle*x+palka*z)
     
-    print('''      |:H:a:p:p:y:|
+print('''      |:H:a:p:p:y:|
     __|___________|__
     |^^^^^^^^^^^^^^^^^|
     |:B:i:r:t:h:d:a:y:|
     |                 |
     ~~~~~~~~~~~~~~~~~~~ ''')
-    print('\n')
+print('\n')
