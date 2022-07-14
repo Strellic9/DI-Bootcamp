@@ -7,8 +7,6 @@ $a
 #t%
 ^r!"""
 
-print(bigString[3])
-
 col1, col2, col3 = list(), list(), list()
 
 for i in range(len(bigString)):
@@ -19,21 +17,12 @@ for i in range(len(bigString)):
     if i % 4 == 2:
         col3.append(bigString[i])
 
-print(col1,col2,col3)
 
 matrix = [
     col1,
     col2,
     col3
 ] 
-
-print(matrix)
-
-import re
-
-alphabet = '[a-zA-Z]' 
-print(alphabet)
-specialCharacters = '[!@#$%^&* ,./\| ]'
 
 decodedList = list(' ')
 for i in matrix:
