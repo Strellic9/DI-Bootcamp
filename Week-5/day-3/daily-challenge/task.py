@@ -2,9 +2,14 @@ import math
 import turtle
 
 class Circle():
-    def __init__(self, radius:int) -> int:
-        self.radius = radius
-    
+    def __init__(self, value_of_radius_or_diameter: int, radius_or_diameter:str = 'radius') -> int:
+        if radius_or_diameter == 'radius':
+            self.radius = value_of_radius_or_diameter
+        elif radius_or_diameter == 'diameter':
+            self.radius = value_of_radius_or_diameter / 2
+        else:
+            raise Exception ('only `radius` or `diameter` accepeted')
+
     def circleArea(self):
         self.circleArea = (self.radius**2)*math.pi
         print(self.circleArea)

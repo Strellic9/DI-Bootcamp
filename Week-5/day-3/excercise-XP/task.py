@@ -43,9 +43,9 @@ class Currency:
                 self.amount+=other.amount
                 return self.amount
             else:
-                return f'cant add between {self.currency} and {other.currency}'
+                raise Exception(f'cant add between {self.currency} and {other.currency}')
         else:
-            return 'u stoopid, cant add this'
+            raise Exception('u stoopid, cant add this. Only currency with currency') 
 
     def __iadd__(self, other):
         if type(other)==int:
@@ -56,9 +56,10 @@ class Currency:
                 self.amount+=other.amount
                 return self
             else:
-                return f'cant add between {self.currency} and {other.currency}'
+                raise Exception(f'cant add between {self.currency} and {other.currency}')
+
         else:
-            return 'u stoopid, cant add this'
+            raise Exception('u stoopid, cant add this. Only currency with currency') 
 
     def __call__(self):
         return str(f'{self.amount} {self.currency}s') 
@@ -70,19 +71,17 @@ c2 = Currency('dollar', 10)
 c3 = Currency('shekel', 1)
 c4 = Currency('shekel', 10)
 
-int1 = 10
+# print(str(c1))
+# print(int(c1))
+# print(repr(c1))
+# print(c1+5)
+# print(c1+c2)
+# print(c1())
 
-print(str(c1))
-print(int(c1))
-print(repr(c1))
-print(c1+5)
-print(c1+c2)
-print(c1())
+# c1+=5
+# print(c1())
 
-c1+=5
-print(c1())
+# c1+=c2
+# print(c1())
 
-c1+=c2
-print(c1())
-
-print(c1+c3)
+print(c1+'dg')
