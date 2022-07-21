@@ -83,5 +83,3 @@ c4 = Currency('shekel', 10)
 
 # c1+=c2
 # print(c1())
-
-print(c1+'dg')
