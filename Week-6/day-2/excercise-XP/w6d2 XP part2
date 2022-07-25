@@ -35,7 +35,9 @@
 -- select customer.customer_id, amount, payment_date from payment inner join customer on payment.customer_id = customer.customer_id order by customer_id asc
 
 -- 13
--- select inventory.film_id from inventory inner join film on inventory.film_id = film.film_id where inventory.film_id is not NULL
+-- select film.film_id from film 
+-- left join inventory on inventory.film_id = film.film_id 
+-- where inventory.film_id is NULL
 
 -- черновик
 -- select * from inventory order by film_id asc
