@@ -1,0 +1,32 @@
+-- select * from actors
+
+-- drop table actors
+
+-- CREATE TABLE actors(
+--  actor_id SERIAL PRIMARY KEY,
+--  first_name VARCHAR (50) NOT NULL,
+--  last_name VARCHAR (100) NOT NULL,
+--  age DATE NOT NULL,
+--  number_oscars SMALLINT NOT NULL
+-- )
+
+-- INSERT INTO actors (first_name, last_name, age, number_oscars)
+-- VALUES('Matt','Damon','08/10/1970', 5);
+
+-- INSERT INTO actors (first_name, last_name, age, number_oscars)
+-- VALUES('George','Clooney','06/05/1961', 2);
+
+-- INSERT INTO actors (first_name, last_name, age, number_oscars)
+-- VALUES('Ralph','Fiennes','22/12/1962', 0),
+-- ('Christian','Bale','30/01/1974', 1),
+-- ('Alfredo','Pachino','25/04/1940', 1);
+
+-- INSERT INTO actors (first_name, last_name, age, number_oscars)
+-- VALUES('Juliette','Binoche','09/03/1964', 1);
+
+-- INSERT INTO actors (first_name, last_name, age, number_oscars)
+-- VALUES('Kristin','Thomas','24/05/1960', 0);
+
+
+
+select * from actors;

@@ -1,0 +1,14 @@
+-- select * from items; 
+
+---------- EXC 1 ------------
+
+-- select * from items order by item_price asc
+
+-- select * from items where item_price>=80 order by item_price desc
+
+-- select first_name, last_name from customers order by first_name asc  limit 3
+
+-- select last_name from customers order by last_name desc
+
+---------- EXC 2 ------------
+
