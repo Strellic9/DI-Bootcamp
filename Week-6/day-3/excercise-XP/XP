@@ -1,0 +1,111 @@
+-- --------------------------EXC1
+
+-- select name, film.language_id from film 
+-- join language on language.language_id = film.language_id
+
+-- select title, description, name from film 
+-- LEFT join language on language.language_id = film.language_id
+
+-- select title, description, name from film 
+-- right join language on language.language_id = film.language_id
+
+-- in 2nd case we get additional 5 records containing 
+-- languages that we dont have any films with
+
+-- create table new_film (
+-- 	id serial primary key,
+-- 	name varchar (30) not null
+-- )
+
+-- insert into new_film (name)
+-- select title from film WHERE film_id between 1 and 20
+
+-- create table customer_review (
+-- 	rewiev_id serial primary key,
+-- 	film_id int,
+-- 	language_id int,
+-- 	foreign key (film_id ) references new_film(id) ON DELETE CASCADE,
+-- 	foreign key (language_id) references language(language_id) ON DELETE CASCADE,
+-- 	title varchar (20) not null,
+-- 	score smallint not null,
+-- 	rewiew_text text not null,
+-- 	last_update date not null
+-- )
+
+-- insert into customer_review (film_id, language_id, title, score, rewiew_text, last_update)
+-- 	select film_id, 
+-- 	film.language_id,
+-- 	title,
+-- 	3,
+-- 	'blah. Bad.',
+-- 	'2022-07-24'
+-- 	from film 
+-- 	join language on film.language_id = language.language_id
+-- 	join new_film  on new_film.id = film.film_id
+-- 	where new_film.id = 2;
+
+-- delete from new_film where id = 1;
+
+-- select * from customer_review
+
+-- -----------------------EXC 2
+
+-- select distinct name from language 
+
+-- 1
+-- update film set language_id = 3 where film_id between 11 and 20
+
+-- select * from film where film_id between 11 and 20
+
+-- 2
+-- FK adress_id. it means that when we add a new record we 
+-- need to adress the 'adress' table to add adress_id
+
+-- 3
+-- easy step, no FKs are tied to it
+-- drop table customer_review
+
+-- 4
+-- select count(*) from rental where return_date is null
+
+-- 5
+-- select * from rental where return_date is null order by rental
+-- select inventory.inventory_id, return_date, rental_rate from rental
+-- join inventory on rental.inventory_id = inventory.inventory_id
+-- join film on film.film_id = inventory.film_id
+-- where return_date is null
+-- order by rental_rate desc limit 30
+
+-- 6.1
+-- select film.*,first_name,last_name from film 
+-- join film_actor on film.film_id = film_actor.film_id
+-- join actor on actor.actor_id = film_actor.actor_id
+-- where description ilike '%sumo wrestler%' and 
+-- 	first_name ilike '%penelope%' and
+-- 	last_name ilike '%monroe%'
+
+-- 6.2
+-- select * from film
+-- where length < 60 and
+-- rating = 'R'
+
+-- 6.3
+-- select * from film
+-- join inventory on inventory.film_id = film.film_id
+-- join rental on inventory.inventory_id = rental.inventory_id
+-- join customer on customer.customer_id = rental.customer_id
+-- where rental_rate > 4.00
+-- and customer.first_name ilike '%matthew%'
+-- and customer.last_name ilike '%mahan%'
+-- and return_date between '2005-07-28' and '2005-08-01'
+
+-- 6.4
+select * from film
+join inventory on inventory.film_id = film.film_id
+join rental on inventory.inventory_id = rental.inventory_id
+join customer on customer.customer_id = rental.customer_id
+where title ilike '%boat%' 
+or description ilike '%boat%'
+and customer.first_name ilike '%matthew%'
+and customer.last_name ilike '%mahan%'
+order by replacement_cost desc limit 1

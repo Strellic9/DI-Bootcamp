@@ -1,0 +1,20 @@
+--  create table purchases (
+--  	id serial primary key,
+-- 	 customer_id int, foreign key (customer_id) references customers(customer_id),
+-- 	 item_id int, foreign key (item_id) references items(item_id),
+-- 	 quantity_purchased int
+--  )
+
+-- insert into purchases (customer_id, item_id, quantity_purchased) 
+-- values (3,3,1), (5,2,10), (1,1,2);
+
+-- select * from items
+
+-- 1
+-- select items.item_id, item_name from purchases join items on purchases.item_id = items.item_id
+
+-- 2
+-- select customers.*, purchases.*  from purchases join customers on purchases.customer_id=customers.customer_id
+
+-- 3
+select purchases.*, items.* from purchases  join items on purchases.item_id = items.item_id where customer_id=5
